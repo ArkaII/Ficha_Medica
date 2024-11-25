@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <h1>Citas del Paciente</h1>
+        </div>
+        <a href="Nuevo_Paciente.html">Añadir Paciente</a>
+        <a href="#">Inicio</a>
+        <a href="Historial.html">Historial</a>
+        <a href="Ficha_Medica_Paciente.html">Ficha Médica Paciente</a>
+        <a href="Medicamentos.html">Medicamento</a>
+        <a href="Citas.html">Citas</a>
+        <a href="#">Facturas</a>
+        <button class="cerrar-sesion" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <script>
+        function cerrarSesion() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <h1 class="l-doctores">Listado Doctores</h1>
+    <div class="clock-container">
+        <div id="clock"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div class="main-content">
+        <div class="container-card-list">
+            <div class="list">
+                <div class="card">
+                    <h3>Dra. Marina Martina</h3>
+                    <p>Oncologia</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Dr. Francisco Cortez</h3>
+                    <p>Medicina General</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Dra. Claudia Roa</h3>
+                    <p>Medicina General</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Dr. Franco Isaza</h3>
+                    <p>Cardiologia</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+            </div>
+            <div class="list">
+                <div class="card">
+                    <h3>Dr. Mateo Lopez</h3>
+                    <p>Dermatologia</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Dra. Cintia Salgado</h3>
+                    <p>Cardiologia</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Dra. Martha Rivera</h3>
+                    <p>Neurologia</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Dr. Carlos Rivas</h3>
+                    <p>Kinesiologia</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+            </div>
+            <div class="list">
+                <div class="card">
+                    <h3>Dra Diana Carvajal</h3>
+                    <p>Medicina General</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Diego Retamales</h3>
+                    <p>Neurologia</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Dr. Fernando Farias</h3>
+                    <p>Pediatria</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+                <div class="card">
+                    <h3>Romina Robinson</h3>
+                    <p>Pediatria</p>
+                    <input type="date" class="calendar">
+                    <input type="time" class="time">
+                    <button class="btn-agendar">Agendar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

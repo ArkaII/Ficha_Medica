@@ -1,0 +1,414 @@
+body.login-page {
+    margin: 0;
+    padding: 0;
+    background-image: url('R.jpeg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen*/
+    background-size: cover;
+    /*background-position: center;*/
+    font-family: Arial, sans-serif; /* Cambia la fuente según tus preferencias*/
+}
+
+.container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo del contenido */
+    text-align: justify;
+    border-radius: 10px;
+}
+/* Estilos para el sidebar */
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+}
+
+.top {
+    padding: 10px;
+    color: white;
+    display: block;
+}
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #555;
+}
+
+/* Estilos para el contenido principal */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.checkbox-container {
+    display: inline-block; /* Para que los contenedores estén en línea */
+    margin-right: 20px; /* Espacio entre los contenedores */
+}
+
+/* Estilos para los checkboxes */
+input[type="checkbox"] {
+    /* Ocultar el checkbox predeterminado */
+    display: none;
+}
+
+/* Estilo para las etiquetas de los checkboxes */
+label {
+    /* Establecer un estilo de aspecto de botón */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo cuando se pasa el cursor por encima de las etiquetas */
+label:hover {
+    background-color: #ccc;
+}
+
+/* Estilo para los checkboxes marcados */
+input[type="checkbox"]:checked + label {
+    background-color: #007bff;
+    color: white;
+}
+
+.lista {
+    display: flex; /* Para alinear los divs horizontalmente */
+    justify-content: space-around; /* Para distribuir los divs de manera uniforme */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Estilo para las listas */
+ul {
+    list-style-type: none;
+    padding: 10px;
+    ;
+}
+
+li {
+    padding: 10px;
+}
+.cerrar-sesion {
+    position: absolute;
+    bottom: 40px; /* Distancia desde la parte inferior del contenedor */
+    right: 20px; /* Distancia desde el lado derecho del contenedor */
+}
+
+/*estilos barra buscadora*/
+.search-container-wide {
+    display: flex;
+    max-width: 600px; /* Cambiamos el ancho máximo del contenedor */
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+/*estilos para el reloj*/
+.clock-container {
+    font-size: 24px;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+/*estilos boton agendar*/
+
+.btn_agendar {
+    display: block;
+    margin-top: 70px; /* Espacio entre la lista y el botón */
+}
+
+/* estilos login */
+body.login-page {
+    display: flex;
+    justify-content: flex-start; /* Alinea el contenido a la izquerda */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Sin margen */
+    background-color: #333; /* Fondo oscuro */
+    font-family: Arial, sans-serif; /* Fuente */
+    margin-left: 50px;
+}
+
+.Sesion {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo transparente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Ancho fijo para el formulario */
+    margin-right: 20px; /* Espacio desde el borde derecho */
+    color: black; /* Color del texto */
+}
+
+.Sesion h1 {
+    text-align: center;
+    color: black; /* Color del texto del encabezado */
+}
+
+.Sesion label {
+    display: block;
+    margin: 10px 0 5px;
+    color: black; /* Color del texto de las etiquetas */
+}
+
+.Sesion input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.Sesion button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.Sesion button:hover {
+    background-color: #0056b3;
+}
+
+/*estilos tarjetas*/
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left:250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.list {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    margin: 0 0 10px;
+}
+
+.card p {
+    margin: 0;
+}
+
+/*estilos boton agendar*/
+.btn-agendar {
+    background-color: white;
+    color: black;
+    border: 2px solid blue;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+}
+
+.btn-agendarn:hover {
+    background-color: rgb(117, 201, 127);
+}
+
+.l-doctores{
+    margin-left: 290px;
+    margin-top: 30px;
+}
+
+/*estilos calendario*/
+.calendar, .time {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*estilos tabla pacientes*/
+.tabla-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+.info-med{
+    text-align: center;
+}
+
+/*estilos tabla medicamentos*/
+.tabla-container-med {
+    max-width: 800px;
+    margin-top: 100px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.checkbox-container-med {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.checkbox-container-med input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+}
+
+.checkbox-container-med:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox-container-med input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container-med input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container-med .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.info-recetas{
+    margin-left: 290px;
+}
+
+/*estilos carta con svg*/
+.card-person {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-left: 300px;
+    margin-top: 180px;
+}
+.card-person img {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: 100px; /* Ajusta el tamaño según tus necesidades */
+    margin-bottom: 20px
+}
+.card-person h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+}
+.card-person p {
+    font-size: 16px;
+    margin: 5px 0;
+}

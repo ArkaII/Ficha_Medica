@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <h1>Historial del Paciente</h1>
+        </div>
+        <a href="Nuevo_Paciente.html">Añadir Paciente</a>
+        <a href="#">Inicio</a>
+        <a href="Historial.html">Historial</a>
+        <a href="Ficha_Medica_Paciente.html">Ficha Médica Paciente</a>
+        <a href="Medicamentos.html">Medicamento</a>
+        <a href="Citas.html">Citas</a>
+        <a href="#">Facturas</a>
+        <button class="cerrar-sesion" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    <script>
+        function cerrarSesion() {
+            window.location.href = "index.html";
+        }
+    </script>
+    <div class="search-container-wide">
+        <input type="text" placeholder="Ingresa tu RUT">
+        <button type="submit">Buscar</button>
+    </div>
+
+    <h1 class="info-med">Tabla de Información Médica</h1>
+    <div class="tabla-container">
+        <table>
+            <tr>
+                <th>Nombre del Paciente</th>
+                <th>Rut</th>
+                <th>Enfermedad</th>
+                <th>Fecha de Diagnóstico</th>
+                <th>Tratamiento</th>
+            </tr>
+            <tr>
+                <td>Juan Pérez</td>
+                <td>12.345.678-9</td>
+                <td>Diabetes Tipo 2</td>
+                <td>2024-03-15</td>
+                <td>Insulina y dieta</td>
+            </tr>
+            <tr>
+                <td>María López</td>
+                <td>20.123.456-7</td>
+                <td>Hipertensión</td>
+                <td>2024-04-02</td>
+                <td>Losartán y ejercicio</td>
+            </tr>
+            <tr>
+                <td>Carlos González</td>
+                <td>15.678.912-3</td>
+                <td>Asma</td>
+                <td>2024-04-10</td>
+                <td>Inhalador de salbutamol</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
+
+</body>
+</html>

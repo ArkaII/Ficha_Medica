@@ -1,0 +1,10 @@
+<svg width="80" height="80" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo de la ficha médica (blanco) -->
+  <rect x="0" y="0" width="200" height="200" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+
+  <!-- Símbolo de estetoscopio (negro) -->
+  <path d="M120,60 C120,30 100,10 70,10 C40,10 20,30 20,60 L20,130 C20,160 40,180 70,180 C100,180 120,160 120,130 Z" fill="#000000"/>
+  <path d="M30,130 C30,170 90,170 90,130" fill="none" stroke="#000000" stroke-width="6"/>
+  <circle cx="90" cy="90" r="30" fill="#000000"/>
+  <circle cx="90" cy="90" r="20" fill="#ffffff"/>
+</svg>

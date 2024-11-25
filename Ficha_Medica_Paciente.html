@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideBar</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Contenedor principal */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .profile-card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-details {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .profile-picture {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+
+        .profile-info {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .medical-info {
+            margin-top: 20px;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <h1>Ficha Médica Paciente</h1>
+        </div>
+        <a href="Nuevo_Paciente.html">Añadir Paciente</a>
+        <a href="#">Inicio</a>
+        <a href="Historial.html">Historial</a>
+        <a href="Ficha_Medica_Paciente.html">Ficha Médica Paciente</a>
+        <a href="Medicamentos.html">Medicamento</a>
+        <a href="Citas.html">Citas</a>
+        <a href="#">Facturas</a>
+        <button class="cerrar-sesion" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    <script>
+        function cerrarSesion() {
+            window.location.href = "index.html";
+        }
+    </script>
+        <!-- Contenido principal -->
+        <div class="main-content">
+            <!-- Encabezado -->
+            <div class="header">
+                <h1>Ficha Médica Electrónica</h1>
+                <div>Dr(a). Smith</div>
+            </div>
+    
+            <!-- Perfil del paciente -->
+            <div class="profile-card">
+                <h2>Perfil del Paciente John Doe</h2>
+                <div class="profile-details">
+                    <div class="profile-picture"></div>
+                    <div class="profile-info">
+                        <p><strong>Nombre:</strong> John Doe</p>
+                        <p><strong>Género:</strong> Masculino</p>
+                        <p><strong>Edad:</strong> 40</p>
+                        <p><strong>Tipo de sangre:</strong> A+</p>
+                        <p><strong>RUT:</strong> 10.513.477-9</p>
+                        <p><strong>Última visita:</strong> 12/04/2024</p>
+                        <p><strong>Condición:</strong> Diabetes Tipo 2</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Secciones adicionales -->
+            <div class="medical-info">
+                <div class="section">
+                    <h3>Historial Médico</h3>
+                    <ul>
+                        <li>Blood Test Result - Dr. Emily Johnson</li>
+                        <li>Allergy Diagnosis - Dr. Michael Smith</li>
+                    </ul>
+                </div>
+    
+                <div class="section">
+                    <h3>Historial de Medicamentos</h3>
+                    <ul>
+                        <li>Metformina 500mg - Prescripción mensual</li>
+                        <li>Inyección de Insulina - Dosis única</li>
+                    </ul>
+                </div>
+    
+                <div class="section">
+                    <h3>Frecuencia Cardiaca</h3>
+                    <p>Gráfico de frecuencia cardíaca aquí</p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+</body>
+</html>
