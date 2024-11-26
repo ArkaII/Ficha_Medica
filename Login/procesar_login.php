@@ -33,18 +33,38 @@ try {
                 header("Location: ../Ficha_Medica_Paciente.html");
                 exit;
             } else {
-                // Contraseña incorrecta
-                echo "Contraseña incorrecta.";
+                // Contraseña incorrecta, mostrar mensaje y redirigir
+                echo "<script>
+                    alert('Contraseña incorrecta.');
+                    setTimeout(function() {
+                        window.location.href = '../Login/index.html';  // Redirige al índice
+                    }, 1); // Espera 1 segundos antes de redirigir
+                </script>";
             }
         } else {
-            // Correo no encontrado
-            echo "Correo electrónico no encontrado.";
+            // Correo no encontrado, mostrar mensaje y redirigir
+            echo "<script>
+                alert('Correo electrónico no encontrado.');
+                setTimeout(function() {
+                    window.location.href = '../Login/index.html';  // Redirige al índice
+                    }, 1); // Espera 1 segundos antes de redirigir
+                </script>";
         }
     } else {
-        echo "Por favor, ingrese su correo electrónico y contraseña.";
+        echo "<script>
+            alert('Por favor, ingrese su correo electrónico y contraseña.');
+            setTimeout(function() {
+                window.location.href = '../Login/index.html';  // Redirige al índice
+                    }, 1); // Espera 1 segundos antes de redirigir
+                </script>";
     }
 } catch (Exception $e) {
     // Manejar errores
-    echo "Error: " . $e->getMessage();
+    echo "<script>
+        alert('Error: " . $e->getMessage() . "');
+        setTimeout(function() {
+            window.location.href = '..Login/index.html';  // Redirige al índice
+        }, 1); // Espera 2 segundos antes de redirigir
+    </script>";
 }
 ?>
