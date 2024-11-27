@@ -1,0 +1,17 @@
+{
+    "name": "admin/ficha_medica",
+    "autoload": {
+        "psr-4": {
+            "Admin\\FichaMedica\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Arkall",
+            "email": "Pedroignacioperez7@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

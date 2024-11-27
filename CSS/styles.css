@@ -411,4 +411,18 @@ th {
 .card-person p {
     font-size: 16px;
     margin: 5px 0;
+
 }
+
+.recover-password a {
+        display: inline-block;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #007BFF;
+        font-size: 14px;
+}
+    
+.recover-password a:hover {
+        text-decoration: underline;
+}
+    
