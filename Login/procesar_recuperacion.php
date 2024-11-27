@@ -40,7 +40,7 @@ try {
             $stmt->execute();
 
             // URL de recuperación
-            $url_recuperacion = "http://tu-dominio.com/Login/restablecer_contrasena.php?token=$token";
+            $url_recuperacion = "http://localhost/Login/restablecer_contrasena.php?token=$token";
 
             // Configurar el correo
             $mail = new PHPMailer(true);
