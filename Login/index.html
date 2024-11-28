@@ -4,26 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <title>Ficha Médica Unificada</title>
+    <link rel="stylesheet" href="../CSS/Estilo_Index.css">
 </head>
 
 <body class="login-page">
-    <form class="Sesion" action="../Login/procesar_login.php" method="POST">
-        <h1>Iniciar Sesión</h1>
-        <label for="correo">Correo Electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
-
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required>
+    <div class="container-login">
+        <!-- Título principal -->
+        <h1 class="main-title">FICHA MÉDICA UNIFICADA</h1>
         
-        <button type="submit">Iniciar sesión</button>
+        <!-- Formulario de inicio de sesión -->
+        <form class="Sesion" action="../Login/procesar_login.php" method="POST">
+            <h2>Iniciar Sesión</h2>
+            
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required>
 
-        <!-- Enlace para recuperar contraseña -->
-        <div class="recover-password">
-            <a href="../Login/recuperar_contrasena.html">¿Olvidaste tu contraseña?</a>
-        </div>
-    </form>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+            
+            <button type="submit" class="btn-login">Iniciar sesión</button>
+
+            <div class="recover-options">
+                <a href="../Registro_Usuario/RegistrarUsuarios.html" class="recover-link">Crear Cuenta</a>
+                <a href="../Login/recuperar_contrasena.html" class="recover-link">¿Olvidaste tu contraseña?</a>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>

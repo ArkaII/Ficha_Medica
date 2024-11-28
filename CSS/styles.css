@@ -1,11 +1,4 @@
-body.login-page {
-    margin: 0;
-    padding: 0;
-    background-image: url('R.jpeg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen*/
-    background-size: cover;
-    /*background-position: center;*/
-    font-family: Arial, sans-serif; /* Cambia la fuente según tus preferencias*/
-}
+
 
 .container {
     max-width: 800px;
@@ -426,3 +419,100 @@ th {
         text-decoration: underline;
 }
     
+/* Ajusta los enlaces dentro de un contenedor para que estén uno al lado del otro */
+.recover-options {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    justify-content: center; /* Centra los botones */
+    margin-top: 10px;
+}
+
+.recover-link {
+    text-decoration: none;
+    color: #007bff; /* Color de los enlaces */
+    font-weight: bold;
+}
+
+.recover-link:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+/* Página de recuperación */
+.recovery-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('R.jpeg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen*/
+    background-color: #f5f5f5; /* Fondo claro */
+    font-family: Arial, sans-serif;
+}
+
+.container-recovery {
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.Recuperacion h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.Recuperacion p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.Recuperacion label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.Recuperacion input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-recovery {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-recovery:hover {
+    background-color: #0056b3;
+}
+
+.recover-options {
+    margin-top: 15px;
+}
+
+.recover-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.recover-link:hover {
+    text-decoration: underline;
+}

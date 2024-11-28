@@ -1,0 +1,104 @@
+/* General settings */
+body.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of viewport */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background color */
+    background-image: url('R.jpeg'); /* Cambia 'fondo.jpeg' por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container for the form */
+.container-login {
+    width: 100%;
+    max-width: 400px; /* Restrict width */
+    background-color: rgba(255, 255, 255, 0.9); /* White with slight transparency */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Form styles */
+.Sesion {
+    display: flex;
+    flex-direction: column;
+}
+
+.Sesion h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; /* Dark text */
+}
+
+.Sesion label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555; /* Subtle dark text */
+}
+
+.Sesion input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.Sesion input:focus {
+    border-color: #007bff; /* Highlight on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow */
+}
+
+/* Button styles */
+.btn-login {
+    padding: 10px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-login:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Links below the form */
+.recover-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.recover-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: #007bff; /* Link color */
+    transition: color 0.3s ease-in-out;
+}
+
+.recover-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Título principal */
+.main-title {
+    text-align: center;
+    font-size: 28px; /* Tamaño del texto del título */
+    font-weight: bold; /* Negrita */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    color: #333; /* Color del texto */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    font-family: Arial, sans-serif; /* Fuente */
+}
