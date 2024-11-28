@@ -45,12 +45,15 @@ try {
             // Configurar el correo
             $mail = new PHPMailer(true);
 
+            // Configuración de la codificación del correo
+            $mail->CharSet = 'UTF-8'; // Establece la codificación UTF-8
+
             // Configuración del servidor SMTP de Gmail
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';  // Servidor SMTP de Gmail
             $mail->SMTPAuth = true;
             $mail->Username = 'pedroignacioperez7@gmail.com';  // Tu correo de Gmail
-            $mail->Password = 'tnxc lgvz dfmh etwq';  // Tu contraseña de Gmail (o usar una contraseña de aplicación si tienes 2FA activado)
+            $mail->Password = 'tnxc lgvz dfmh etwq';  // Tu contraseña de Gmail
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
@@ -60,7 +63,7 @@ try {
 
             // Asunto y cuerpo del correo
             $mail->isHTML(false);
-            $mail->Subject = 'Recuperación de contraseña';
+            $mail->Subject = 'Recuperación de contraseña FICHA MEDICA UNIVERSAL'; // Asunto del correo
             $mail->Body    = "Hola " . $usuario["nombre"] . ",\n\n";
             $mail->Body   .= "Recibimos una solicitud para restablecer tu contraseña.\n";
             $mail->Body   .= "Por favor, haz clic en el siguiente enlace para restablecerla:\n\n";

@@ -461,12 +461,12 @@ th {
 .Recuperacion h1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #000000;
 }
 
 .Recuperacion p {
     font-size: 14px;
-    color: #555;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -475,7 +475,7 @@ th {
     text-align: left;
     font-size: 14px;
     margin-bottom: 8px;
-    color: #333;
+    color: #000000;
 }
 
 .Recuperacion input[type="email"] {
@@ -516,3 +516,4 @@ th {
 .recover-link:hover {
     text-decoration: underline;
 }
+

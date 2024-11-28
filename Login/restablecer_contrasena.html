@@ -5,24 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restablecer Contraseña</title>
-    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/Estilo_Index.css"> <!-- Cambiar la ruta del CSS si es necesario -->
 </head>
 
 <body class="login-page">
-    <form class="Sesion" action="restablecer_contrasena.php" method="POST">
-        <h1>Restablecer Contraseña</h1>
+    <div class="container-login">
+        <!-- Título principal -->
+        <h1 class="main-title">Restablecer Contraseña</h1>
 
-        <!-- Campo hidden para pasar el token y usuario_id -->
-        <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token']); ?>">
-        
-        <label for="nueva_contrasena">Nueva Contraseña:</label>
-        <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
-        
-        <label for="confirmar_contrasena">Confirmar Nueva Contraseña:</label>
-        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
-        
-        <button type="submit" onclick="return validarContrasena()">Actualizar Contraseña</button>
-    </form>
+        <form class="Sesion" action="restablecer_contrasena.php" method="POST">
+            <!-- Campo hidden para pasar el token y usuario_id -->
+            <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token']); ?>">
+
+            <label for="nueva_contrasena">Nueva Contraseña:</label>
+            <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
+
+            <label for="confirmar_contrasena">Confirmar Nueva Contraseña:</label>
+            <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+            
+            <button type="submit" class="btn-login" onclick="return validarContrasena()">Actualizar Contraseña</button>
+
+        </form>
+    </div>
 
     <script>
         function validarContrasena() {
