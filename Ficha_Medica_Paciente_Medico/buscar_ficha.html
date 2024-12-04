@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Ficha Médica</title>
+    <link rel="stylesheet" href="/CSS/estilo_buscarPaciente.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body class="login-page">
+    <div class="container-login">
+        <h1 class="main-title">BUSCAR FICHA MÉDICA DEL PACIENTE</h1>
+        <form action="ver_ficha_medica.php" method="GET" class="Sesion">
+            
+            
+            <label for="rut">RUT del Paciente:</label>
+            <input type="text" id="rut" name="rut" placeholder="Ingrese el RUT" required>
+
+            <div class="form-buttons">
+                <button type="submit" class="btn-login">Buscar Ficha Médica</button>
+                <button type="button" onclick="window.history.back();" class="btn-back">Volver Atrás</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha Médica Unificada</title>
-    <link rel="stylesheet" href="../CSS/Estilo_Index.css">
+    <link rel="stylesheet" href="../CSS/Estilo_Index_Paciente.css">
 </head>
 
 <body class="login-page">
     <div class="container-login">
         <!-- Título principal -->
         <h1 class="main-title">FICHA MÉDICA UNIFICADA</h1>
-        
         <!-- Formulario de inicio de sesión -->
         <form class="Sesion" action="../Login/procesar_login.php" method="POST">
-            <h2>Inicio Sesión</h2>
+            <h2>Inicio Sesión Pacientes</h2>
             
             <label for="correo">Correo Electrónico:</label>
             <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required>
@@ -26,7 +25,6 @@
             <button type="submit" class="btn-login">Iniciar sesión</button>
 
             <div class="recover-options">
-                <a href="../Registro_Usuario/RegistrarUsuarios.html" class="recover-link">Crear Cuenta</a>
                 <a href="../Login/recuperar_contrasena.html" class="recover-link">¿Olvidaste tu contraseña?</a>
             </div>
         </form>

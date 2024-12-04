@@ -30,14 +30,14 @@ try {
                 $_SESSION["loggedin"] = true;
                 $_SESSION["usuario_id"] = $usuario["id"];
                 $_SESSION["nombre"] = $usuario["nombre"];
-                header("Location: ../Ficha_Medica_Paciente_Medico\Ficha_Medica_Paciente.html");
+                header("Location: ../Ficha_Medica_Paciente.html");
                 exit;
             } else {
                 // Contraseña incorrecta, mostrar mensaje y redirigir
                 echo "<script>
                     alert('Contraseña incorrecta.');
                     setTimeout(function() {
-                        window.location.href = '../Login/index.html';  // Redirige al índice
+                        window.location.href = '../Login_Pacientes/index_Paciente.html';  // Redirige al índice
                     }, 1); // Espera 1 segundos antes de redirigir
                 </script>";
             }
@@ -46,7 +46,7 @@ try {
             echo "<script>
                 alert('Correo electrónico no encontrado.');
                 setTimeout(function() {
-                    window.location.href = '../Login/index.html';  // Redirige al índice
+                    window.location.href = '..Login_Pacientes/index_Paciente.html;  // Redirige al índice
                     }, 1); // Espera 1 segundos antes de redirigir
                 </script>";
         }
@@ -54,7 +54,7 @@ try {
         echo "<script>
             alert('Por favor, ingrese su correo electrónico y contraseña.');
             setTimeout(function() {
-                window.location.href = '../Login/index.html';  // Redirige al índice
+                window.location.href = '..Login_Pacientes/index_Paciente.html';  // Redirige al índice
                     }, 1); // Espera 1 segundos antes de redirigir
                 </script>";
     }
@@ -63,7 +63,7 @@ try {
     echo "<script>
         alert('Error: " . $e->getMessage() . "');
         setTimeout(function() {
-            window.location.href = '..Login/index.html';  // Redirige al índice
+            window.location.href = '..Login_Pacientes/index_Paciente.html';  // Redirige al índice
         }, 1); // Espera 2 segundos antes de redirigir
     </script>";
 }
