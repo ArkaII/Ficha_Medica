@@ -139,4 +139,4 @@ if (isset($_GET['rut'])) {
 } else {
     echo "<script>alert('Por favor ingresa el RUT del paciente.'); window.location.href='buscar_paciente.html';</script>";
 }
-?>
+?>  

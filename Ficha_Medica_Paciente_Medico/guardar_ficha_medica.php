@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die('Error: No se proporcionó el ID del paciente.');
     }
 
-    $paciente_id = $_POST['paciente_id']; // Cambiado de usuario_id a paciente_id
+    $paciente_id = $_POST['usuario_id']; // Cambiado de usuario_id a paciente_id
     $nombre = $_POST['nombre'];
     $genero = $_POST['genero'];
     $edad = $_POST['edad'];

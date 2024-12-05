@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Ficha Médica</title>
+    <style>
+        /* Estilos del formulario */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+            
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #rut-status {
+            font-weight: bold;
+            color: rgb(255, 17, 0);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#rut').on('blur', function() {
+                var rut = $(this).val();
+
+                if (rut) {
+                    $.ajax({
+                        url: 'verificar_rut.php',
+                        method: 'POST',
+                        data: { rut: rut },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.status === 'exists') {
+                                $('#rut-status').text(response.message); // Mostrar que el RUT ya está registrado
+                            } else {
+                                $('#rut-status').text(response.message); // Mostrar que es un nuevo paciente
+                            }
+                        },
+                        error: function() {
+                            alert('Error al verificar el RUT');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Crear Ficha Médica</h1>
+    <form action="guardar_paciente.php" method="POST">
+        <!-- Campo oculto para usuario_id -->
+        <input type="hidden" name="usuario_id" value="<?php echo $usuario['id']; ?>">
+
+        <label for="rut">RUT :   </label>
+        <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX.XXX.XXX-X (por ejemplo, 12.345.678-9 o 12.345.678-K)">
+        <span id="rut-status"></span> <!-- Mensaje de validación de RUT -->
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+
+        <label for="tipo_sangre">Tipo de Sangre:</label>
+        <input type="text" id="tipo_sangre" name="tipo_sangre" required>
+
+        <label for="condicion">Condición Médica:</label>
+        <input type="text" id="condicion" name="condicion" required>
+
+        <label for="ultima_visita">Última Visita:</label>
+        <input type="date" id="ultima_visita" name="ultima_visita">
+
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" id="nacionalidad" name="nacionalidad">
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion">
+
+        <label for="telefono_contacto">Teléfono de Contacto:</label>
+        <input type="text" id="telefono_contacto" name="telefono_contacto">
+
+        <label for="correo_electronico">Correo Electrónico:</label>
+        <input type="email" id="correo_electronico" name="correo_electronico">
+
+        <button type="submit">Guardar Ficha Médica</button>
+        <button type="button" onclick="window.history.back();" class="btn-back">Volver Atrás</button>
+    </form>
+</body>
+</html>
