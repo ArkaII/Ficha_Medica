@@ -20,6 +20,11 @@ if (isset($_GET['rut'])) {
             'nombre' => $usuario['nombre'],
             'genero' => $usuario['genero'],
             'edad' => $usuario['edad'],
+            'fecha_nacimiento' => $usuario['fecha_nacimiento'], // Nuevo campo
+            'nacionalidad' => $usuario['nacionalidad'],         // Nuevo campo
+            'direccion' => $usuario['direccion'],               // Nuevo campo
+            'telefono' => $usuario['telefono_contacto'],        // Nuevo campo
+            'correo' => $usuario['correo_electronico'],         // Nuevo campo
             'sangre' => $usuario['tipo_sangre'],
             'rut' => $usuario['rut'],
             'ultima_visita' => $usuario['ultima_visita'],

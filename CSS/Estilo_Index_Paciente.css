@@ -48,12 +48,17 @@ body {
 }
 
 .profile-picture {
-    background-color: #ccc;
-    border-radius: 50%;
+    background-image: url('IconoUser.png');
+    background-size: cover;  /* Asegura que la imagen cubra el área sin deformarse */
+    background-position: center;  /* Centra la imagen en el contenedor */
+    border-radius: 50%;  /* Hace que el contenedor sea circular */
     height: 100px;
     width: 100px;
-    
+    display: flex;
+    justify-content: center;  /* Centra el contenido horizontalmente */
+    align-items: center;  /* Centra el contenido verticalmente */
 }
+
 
 /* Información médica */
 .medical-info {
@@ -146,4 +151,19 @@ body {
 /* Posición del botón cuando la barra está colapsada */
 .sidebar.collapsed + .toggle-sidebar {
     left: 70px; /* Ajusta la posición del botón junto a la barra colapsada */
+
+}
+
+/* Estilo para el espacio divisor (Historial Médico) */
+.divider {
+    margin-top: 40px; /* Espacio superior */
+    padding: 20px; /* Relleno interno */
+    text-align: center; /* Centrar el texto */
+    background-color: #f0f8ff; /* Color de fondo (azul claro) */
+    border-top: 2px solid #007bff; /* Línea superior azul */
+    border-bottom: 2px solid #007bff; /* Línea inferior azul */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 20px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    color: #007bff; /* Color del texto */
 }
