@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
     <link rel="stylesheet" href="../CSS/Estilo_RegUser.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function mostrarEspecialidad() {
+            var rol = document.getElementById("rol").value;
+            var especialidadDiv = document.getElementById("especialidadDiv");
+            if (rol === "Medico") {
+                especialidadDiv.style.display = "block"; // Mostrar el campo de especialidad
+            } else {
+                especialidadDiv.style.display = "none"; // Ocultar el campo de especialidad
+            }
+        }
+
+        $(document).ready(function() {
+            $('#rut').on('blur', function() {
+                var rut = $(this).val();
+
+                if (rut) {
+                    $.ajax({
+                        url: '../Ficha_Medica_Paciente_Medico/verificar_rut.php',
+                        method: 'POST',
+                        data: { rut: rut },
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.status === 'exists') {
+                                $('#rut-status').text(response.message); // Mostrar que el RUT ya está registrado
+                                $('#registrar-btn').prop('disabled', true); // Deshabilitar el botón de registro
+                            } else {
+                                $('#rut-status').text(''); // Limpiar el mensaje
+                                $('#registrar-btn').prop('disabled', false); // Habilitar el botón de registro
+                            }
+                        },
+                        error: function() {
+                            $('#rut-status').text('Error al verificar el RUT.'); // Mensaje de error
+                        }
+                    });
+                } else {
+                    $('#rut-status').text(''); // Limpiar el mensaje si el campo está vacío
+                    $('#registrar-btn').prop('disabled', false); // Habilitar el botón de registro
+                }
+            });
+        });
+    </script>
 </head>
 <body class="form-page">
     <div class="form-container">
@@ -20,6 +62,24 @@
             <div class="form-group">
                 <label for="rut">RUT:</label>
                 <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX.XXX.XXX-X (por ejemplo, 12.345.678-9 o 12.345.678-K)">
+                <span id="rut-status" style="color: red;"></span> <!-- Mensaje de estado del RUT -->
+            </div>
+
+            <!-- Campo Rol -->
+            <div class="form-group">
+                <label for="rol">Rol:</label>
+                <select id="rol" name="rol" required onchange="mostrarEspecialidad()">
+                    <option value="">Seleccione un rol</option>
+                    <option value="Paciente">Paciente</option>
+                    <option value="Medico">Médico</option>
+                </select>
+            </div>
+
+               <!-- Campo Especialidad (oculto por defecto) -->
+               <div class="form-group" id="especialidadDiv" style="display: none;">
+                <label for="especialidad">Especialidad:</label>
+                <input type="text">
+
             </div>
 
             <!-- Campo Correo Electrónico -->
@@ -40,16 +100,18 @@
                 <input type="tel" id="telefono" name="telefono" required pattern="\d{9}" title="Debe ingresar un número de teléfono de 10 dígitos">
             </div>
 
-            <!-- Botón de Registro -->
-            <div class="form-group">
-                <button type="submit">Registrar</button>
-            </div>
+         
 
-            <!-- Botón para Volver Atrás -->
-            <div class="form-group">
-                <button type="button" onclick="window.history.back();">Volver Atrás</button>
-            </div>
-        </form>
-    </div>
-</body>
-</html>
+                <!-- Botón de Registro -->
+                <div class="form-group">
+                    <button type="submit">Registrar</button>
+                </div>
+    
+                <!-- Botón para Volver Atrás -->
+                <div class="form-group">
+                    <button type="button" onclick="window.history.back();">Volver Atrás</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    </html>

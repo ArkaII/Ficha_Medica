@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Usuario</title>
+    <link rel="stylesheet" href="../CSS/Estilo_RegUser.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function mostrarEspecialidad() {
+            var rol = document.getElementById("rol").value;
+            var especialidadDiv = document.getElementById("especialidadDiv");
+            if (rol === "Medico") {
+                especialidadDiv.style.display = "block"; // Mostrar el campo de especialidad
+            } else {
+                especialidadDiv.style.display = "none"; // Ocultar el campo de especialidad
+            }
+        }
+
+        // Función para cargar los datos del usuario a modificar
+        function cargarDatosUsuario(rut) {
+            if (rut) {
+                $.ajax({
+                    url: 'cargar_usuario.php', // Archivo PHP que carga los datos del usuario
+                    method: 'POST',
+                    data: { rut: rut },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            $('#nombre').val(response.data.nombre);
+                            $('#correo').val(response.data.correo);
+                            $('#telefono').val(response.data.telefono);
+                            $('#rol').val(response.data.rol);
+                            $('#especialidad').val(response.data.especialidad);
+                            mostrarEspecialidad(); // Mostrar especialidad si es médico
+                        } else {
+                            alert('Usuario no encontrado.');
+                        }
+                    },
+                    error: function() {
+                        alert('Error al cargar los datos del usuario.');
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body class="form-page">
+    <div class="form-container">
+        <h1>Modificar Usuario</h1>
+        <form action="ModificarUsuario.php" method="POST" class="form">
+            <!-- Campo RUT -->
+            <div class="form-group">
+                <label for="rut">RUT:</label>
+                <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX.XXX.XXX-X (por ejemplo, 12.345.678-9 o 12.345.678-K)" onblur="cargarDatosUsuario(this.value)">
+            </div>
+
+            <!-- Campo Nombre -->
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <!-- Campo Correo Electrónico -->
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+
+            <!-- Campo Teléfono -->
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required pattern="\d{9}" title="Debe ingresar un número de teléfono de 9 dígitos">
+            </div>
+
+            <!-- Campo Rol -->
+            <div class="form-group">
+                <label for="rol">Rol:</label>
+                <select id="rol" name="rol" required onchange="mostrarEspecialidad()">
+                    <option value="">Seleccione un rol</option>
+                    <option value="Paciente">Paciente</option>
+                    <option value="Medico">Médico</option>
+                </select>
+            </div>
+
+            <!-- Campo Especialidad (oculto por defecto) -->
+            <div class="form-group" id="especialidadDiv" style="display: none;">
+                <label for="especialidad">Especialidad:</label>
+                <input type="text" id="especialidad" name="especialidad">
+            </div>
+
+            <!-- Botón de Modificación -->
+            <div class="form-group">
+                <button type="submit">Modificar</button>
+            </div>
+
+            <!-- Botón para Volver Atrás -->
+            <div class="form-group">
+                <button type="button" onclick="window.history.back();">Volver Atrás</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html
