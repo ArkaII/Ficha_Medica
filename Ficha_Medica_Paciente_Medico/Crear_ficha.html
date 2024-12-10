@@ -12,12 +12,14 @@
             padding: 20px;
             background-color: #f7f7f7;
             
+            
         }
         h1 {
             text-align: center;
+            color: #007bff;
         }
         form {
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             background: #fff;
@@ -49,6 +51,13 @@
         #rut-status {
             font-weight: bold;
             color: rgb(255, 17, 0);
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -84,48 +93,58 @@
     <form action="guardar_paciente.php" method="POST">
         <!-- Campo oculto para usuario_id -->
         <input type="hidden" name="usuario_id" value="<?php echo $usuario['id']; ?>">
-
-        <label for="rut">RUT :   </label>
-        <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX.XXX.XXX-X (por ejemplo, 12.345.678-9 o 12.345.678-K)">
-        <span id="rut-status"></span> <!-- Mensaje de validación de RUT -->
-
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
-
-        <label for="genero">Género:</label>
-        <select id="genero" name="genero" required>
+        
+        <!-- Sección de Datos Personales -->
+        <div class="section">
+            <h2>Datos Personales</h2>
+            <label for="rut">RUT:</label>
+            <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX.XXX.XXX-X">
+            <span id="rut-status"></span> <!-- Mensaje de validación de RUT -->
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+            
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required>
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero" required>
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
             <option value="Otro">Otro</option>
         </select>
+            <label for="nacionalidad">Nacionalidad:</label>
+            <input type="text" id="nacionalidad" name="nacionalidad" required>
+        </div>
 
-        <label for="edad">Edad:</label>
-        <input type="number" id="edad" name="edad" required>
-
-        <label for="tipo_sangre">Tipo de Sangre:</label>
-        <input type="text" id="tipo_sangre" name="tipo_sangre" required>
-
-        <label for="condicion">Condición Médica:</label>
-        <input type="text" id="condicion" name="condicion" required>
-
-        <label for="ultima_visita">Última Visita:</label>
-        <input type="date" id="ultima_visita" name="ultima_visita">
-
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
-
-        <label for="nacionalidad">Nacionalidad:</label>
-        <input type="text" id="nacionalidad" name="nacionalidad">
-
-        <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion">
-
-        <label for="telefono_contacto">Teléfono de Contacto:</label>
-        <input type="text" id="telefono_contacto" name="telefono_contacto">
-
-        <label for="correo_electronico">Correo Electrónico:</label>
-        <input type="email" id="correo_electronico" name="correo_electronico">
-
+        <!-- Sección de Contacto -->
+                <div class="section">
+                    <h2>Información de Contacto</h2>
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                    
+                    <label for="telefono_contacto">Teléfono de Contacto:</label>
+                    <input type="text" id="telefono_contacto" name="telefono_contacto" required>
+                    
+                    <label for="correo_electronico">Correo Electrónico:</label>
+                    <input type="email" id="correo_electronico" name="correo_electronico" required>
+                </div>
+    
+        
+        <!-- Sección de Información Médica -->
+            <div class="section">
+                <h2>Información Médica</h2>
+                <label for="tipo_sangre">Tipo de Sangre:</label>
+                <input type="text" id="tipo_sangre" name="tipo_sangre" required>
+                
+                <label for="condicion">Condición Médica:</label>
+                <input type="text" id="condicion" name="condicion" required>
+                
+                <label for="ultima_visita">Última Visita:</label>
+                <input type="date" id="ultima_visita" name="ultima_visita">
+            </div>
+        
         <button type="submit">Guardar Ficha Médica</button>
         <button type="button" onclick="window.history.back();" class="btn-back">Volver Atrás</button>
     </form>

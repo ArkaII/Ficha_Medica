@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Usuario</title>
+    <link rel="stylesheet" href="../CSS/Estilo_RegUser.css"> <!-- Asegúrate de que la ruta sea correcta -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function eliminarUsuario() {
+            var rut = document.getElementById("rut").value;
+            if (rut) {
+                $.ajax({
+                    url: 'eliminar_usuario.php', // Archivo PHP que maneja la eliminación
+                    method: 'POST',
+                    data: { rut: rut },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.status === 'success') {
+                            alert('Usuario eliminado exitosamente.');
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    },
+                    error: function() {
+                        alert('Error al eliminar el usuario, debe eliminar primero la ficha medica.');
+                    }
+                });
+            } else {
+                alert('Por favor, ingrese un RUT.');
+            }
+        }
+    </script>
+</head>
+<body class="form-page">
+    <div class="form-container">
+        <h1>Eliminar Usuario</h1>
+        <form class="form">
+            <!-- Campo RUT -->
+            <div class="form-group">
+                <label for="rut">RUT:</label>
+                <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX.XXX.XXX-X (por ejemplo, 12.345.678-9 o 12.345.678-K)">
+            </div>
+
+            <!-- Botón de Eliminación -->
+            <div class="form-group">
+                <button type="button" onclick="eliminarUsuario()">Eliminar Usuario</button>
+            </div>
+
+            <!-- Botón para Volver Atrás -->
+            <div class="form-group">
+                <button type="button" onclick="window.history.back();">Volver Atrás</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

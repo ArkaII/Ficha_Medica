@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     } else {
         // Si el usuario no existe, mostrar un mensaje de error
-        echo "<script>alert('No se encontró el usuario con el RUT proporcionado.'); window.location.href='buscar_usuario.html';</script>";
+        echo "<script>alert('Usuario no registrado, Favor crear usuario.'); window.location.href='../Registro_Usuario/RegistrarUsuarios.html';</script>";
     }
 }
 ?>

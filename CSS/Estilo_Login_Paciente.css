@@ -1,0 +1,99 @@
+/* Estilos generales para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-image: url('Lpaciente.jpg'); /* Cambia 'fondo.jpeg' por la ruta de tu imagen */
+    align-items: center;
+    height: 100vh;
+
+}
+
+/* Contenedor del formulario */
+.container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px; /* Limita el ancho del contenedor */
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título principal centrado */
+.main-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+/* Título secundario (Iniciar sesión) */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+/* Estilos del formulario */
+.Sesion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Estilo de las etiquetas */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+/* Estilo de los campos de entrada */
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Estilo del botón */
+button.btn-login {
+    padding: 10px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-login:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Enlaces de recuperación y creación de cuenta */
+.recover-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.recover-link {
+    color: #004d66;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.recover-link:hover {
+    text-decoration: underline;
+}

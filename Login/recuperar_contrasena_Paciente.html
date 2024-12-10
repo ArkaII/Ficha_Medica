@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+
+<body class="recovery-page">
+    <div class="container-recovery">
+        <form class="Recuperacion" action="../Login/procesar_recuperacion.php" method="POST">
+            <h1>Recuperar Contraseña</h1>
+            <p>Ingrese su correo electrónico registrado y le enviaremos un enlace para restablecer su contraseña.</p>
+            
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico" required>
+
+            <button type="submit" class="btn-recovery">Enviar Enlace de Recuperación</button>
+            
+            <div class="recover-options">
+                <a href="../Login_Pacientes/index_Paciente.html" class="recover-link">Volver a la página de inicio</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

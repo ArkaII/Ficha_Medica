@@ -26,20 +26,20 @@ try {
             // Verificar la contraseña con el hash almacenado
             if (password_verify($contrasena, $usuario['contrasena'])) {
                 // Verificar el rol del usuario
-                if ($usuario['rol'] === 'Paciente') {
-                    // Las credenciales son válidas y el rol es Paciente
+                if ($usuario['rol'] === 'Medico') {
+                    // Las credenciales son válidas y el rol es Médico
                     session_start();
                     $_SESSION["loggedin"] = true;
                     $_SESSION["usuario_id"] = $usuario["id"];
                     $_SESSION["nombre"] = $usuario["nombre"];
-                    header("Location: ../Ficha_Medica_Paciente_Medico/Index_Ficha_Paciente.html");
+                    header("Location: ../Ficha_Medica_Medico.html"); // Redirige a la página del médico
                     exit;
                 } else {
-                    // El usuario no es un Paciente
+                    // El usuario no es un Médico
                     echo "<script>
-                        alert('Acceso denegado. Solo los pacientes pueden iniciar sesión.');
+                        alert('Acceso denegado. Solo los médicos pueden iniciar sesión.');
                         setTimeout(function() {
-                            window.location.href = '../Login_Pacientes/index_Paciente.html';  // Redirige al índice
+                            window.location.href = '../Login_Medicos/index_Medico.html';  // Redirige al índice
                         }, 1); // Espera 1 segundo antes de redirigir
                     </script>";
                 }
@@ -48,16 +48,16 @@ try {
                 echo "<script>
                     alert('Contraseña incorrecta.');
                     setTimeout(function() {
-                        window.location.href = '../Login_Pacientes/index_Paciente.html';  // Redirige al índice
+                        window.location.href = '../Login_Medicos/index_Medico.html';  // Redirige al índice
                     }, 1); // Espera 1 segundo antes de redirigir
                 </script>";
             }
         } else {
-            // // No se encontró un usuario con ese correo electrónico, mostrar mensaje y redirigir
+            // No se encontró un usuario con ese correo electrónico, mostrar mensaje y redirigir
             echo "<script>
                 alert('No se encontró un usuario con ese correo electrónico.');
                 setTimeout(function() {
-                    window.location.href = '.../Login_Pacientes/index_Paciente.html';  // Redirige al índice
+                    window.location.href = '../Login_Medicos/index_Medico.html';  // Redirige al índice
                 }, 1); // Espera 1 segundo antes de redirigir
             </script>";
         }
