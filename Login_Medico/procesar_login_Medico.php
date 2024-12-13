@@ -32,14 +32,14 @@ try {
                     $_SESSION["loggedin"] = true;
                     $_SESSION["usuario_id"] = $usuario["id"];
                     $_SESSION["nombre"] = $usuario["nombre"];
-                    header("Location: ../Ficha_Medica_Medico.html"); // Redirige a la página del médico
+                    header("Location: ../Ficha_Medica_Paciente_Medico\Index_Ficha_Medico.html"); // Redirige a la página del médico
                     exit;
                 } else {
                     // El usuario no es un Médico
                     echo "<script>
                         alert('Acceso denegado. Solo los médicos pueden iniciar sesión.');
                         setTimeout(function() {
-                            window.location.href = '../Login_Medicos/index_Medico.html';  // Redirige al índice
+                            window.location.href = '../Login_Medico/index_Medico.html';  // Redirige al índice
                         }, 1); // Espera 1 segundo antes de redirigir
                     </script>";
                 }
@@ -48,7 +48,7 @@ try {
                 echo "<script>
                     alert('Contraseña incorrecta.');
                     setTimeout(function() {
-                        window.location.href = '../Login_Medicos/index_Medico.html';  // Redirige al índice
+                        window.location.href = '../Login_Medico/index_Medico.html';  // Redirige al índice
                     }, 1); // Espera 1 segundo antes de redirigir
                 </script>";
             }
@@ -57,7 +57,7 @@ try {
             echo "<script>
                 alert('No se encontró un usuario con ese correo electrónico.');
                 setTimeout(function() {
-                    window.location.href = '../Login_Medicos/index_Medico.html';  // Redirige al índice
+                    window.location.href = '../Login_Medico/index_Medico.html';  // Redirige al índice
                 }, 1); // Espera 1 segundo antes de redirigir
             </script>";
         }

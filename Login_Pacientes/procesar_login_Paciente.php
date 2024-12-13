@@ -57,7 +57,7 @@ try {
             echo "<script>
                 alert('No se encontró un usuario con ese correo electrónico.');
                 setTimeout(function() {
-                    window.location.href = '.../Login_Pacientes/index_Paciente.html';  // Redirige al índice
+                    window.location.href = '../Login_Pacientes/index_Paciente.html';  // Redirige al índice
                 }, 1); // Espera 1 segundo antes de redirigir
             </script>";
         }
