@@ -26,20 +26,20 @@ try {
             // Verificar la contraseña con el hash almacenado
             if (password_verify($contrasena, $usuario['contrasena'])) {
                 // Verificar el rol del usuario
-                if ($usuario['rol'] === 'Administrador') {
-                    // Las credenciales son válidas y el rol es Administrador
+                if ($usuario['rol'] === 'Recepcionista') {
+                    // Las credenciales son válidas y el rol es Recepcionista
                     session_start();
                     $_SESSION["loggedin"] = true;
                     $_SESSION["usuario_id"] = $usuario["id"];
                     $_SESSION["nombre"] = $usuario["nombre"];
-                    header("Location: ../Ficha_Medica_Paciente_Medico/Ficha_Medica_Paciente.html"); // Redirige a la página del administrador
+                    header("Location: ../Ficha_Medica_Paciente_Medico/Index_Ficha_Recepcionista.html"); // Redirige a la página del recepcionista
                     exit;
                 } else {
-                    // El usuario no es un Administrador
+                    // El usuario no es un Recepcionista
                     echo "<script>
-                        alert('Acceso denegado. Solo los administradores pueden iniciar sesión.');
+                        alert('Acceso denegado. Solo los recepcionistas pueden iniciar sesión.');
                         setTimeout(function() {
-                            window.location.href = '../Login/index.html';  // Redirige al índice
+                            window.location.href = '../Login_Recepcionista/Index_Recepcionista.html';  // Redirige al índice
                         }, 1); // Espera 1 segundo antes de redirigir
                     </script>";
                 }
@@ -48,7 +48,7 @@ try {
                 echo "<script>
                     alert('Contraseña incorrecta.');
                     setTimeout(function() {
-                        window.location.href = '../Login/index.html';  // Redirige al índice
+                        window.location.href = '../Login_Recepcionista/Index_Recepcionista.html';  // Redirige al índice
                     }, 1); // Espera 1 segundo antes de redirigir
                 </script>";
             }
@@ -56,9 +56,8 @@ try {
             // No se encontró un usuario con ese correo electrónico, mostrar mensaje y redirigir
             echo "<script>
                 alert('No se encontró un usuario con ese correo electrónico.');
-                set ```php
                 setTimeout(function() {
-                    window.location.href = '../Login/index.html';  // Redirige al índice
+                    window.location.href = '../Login_Recepcionista/Index_Recepcionista.html';  // Redirige al índice
                 }, 1); // Espera 1 segundo antes de redirigir
             </script>";
         }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Médica</title>
+    <link rel="stylesheet" href="/CSS/Estilo_Index_Paciente.css">
+    <style>
+        /* Agregar margen a la sidebar */
+        .sidebar {
+            width: 250px; /* Ajusta el tamaño del sidebar */
+            position: fixed; /* Fija el sidebar al lado izquierdo */
+            left: 0;
+            top: 0;
+            bottom: 0;
+            padding: 20px;
+            margin-right: 20px; /* Agrega margen a la derecha */
+            background-color: #f4f4f4;
+        }
+
+        /* Agregar margen al contenido principal */
+        .main-content {
+            margin-left: 270px; /* Separa el contenido de la sidebar */
+            padding: 20px;
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-left: 10px; /* Desplaza el título a la derecha */
+        }
+
+        .rut-input {
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        .profile-card {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <h1>Ficha Médica</h1>
+        </div>
+        <a href="Index_Ficha_Recepcionista.html">Inicio</a>
+
+        <a href="/Registro_Usuario/RegistrarUsuarios.html">Crear Usuario</a>
+        <a href="/Registro_Usuario/Modificar_Usuario.html">Modificar Usuario</a>
+       
+        
+        <button class="cerrar-sesion" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+
+    <script>
+        function cerrarSesion() {
+            window.location.href = "/Login_Recepcionista/Index_Recepcionista.html";
+        }
+    </script>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Ficha Médica Electrónica</h1>
+            <div>BIENVENIDO</div>
+        </div>
+
+        <!-- Ingresar RUT del paciente -->
+        <div class="rut-input">
+            <label for="rut">Ingrese su Rut:</label>
+            <input type="text" id="rut" placeholder="Ej: 10.513.477-9">
+            <button onclick="buscarPaciente()">Buscar</button>
+        </div>
+
+        <!-- Perfil del paciente -->
+         
+        <div class="profile-card" id="profile-card" style="display:none;">
+            <h2>Perfil del Paciente</h2>
+            <div class="profile-details">
+                <div class="profile-picture"></div>
+                <div class="profile-info">
+                    <p><strong>Nombre:</strong> <span id="patientName"></span></p>
+                    <p><strong>Género:</strong> <span id="patientGender"></span></p>
+                    <p><strong>Edad:</strong> <span id="patientAge"></span></p>
+                    <p><strong>Fecha de Nacimiento:</strong> <span id="patientBirthDate"></span></p>
+                    <p><strong>Nacionalidad:</strong> <span id="patientNationality"></span></p>
+                    <p><strong>Dirección:</strong> <span id="patientAddress"></span></p>
+                    <p><strong>Teléfono de Contacto:</strong> <span id="patientPhone"></span></p>
+                    <p><strong>Correo Electrónico:</strong> <span id="patientEmail"></span></p>
+                    <p><strong>Tipo de Sangre:</strong> <span id="patientBloodType"></span></p>
+                    <p><strong>RUT:</strong> <span id="patientRut"></span></p>
+                    <p><strong>Última Visita:</strong> <span id="patientLastVisit"></span></p>
+                    <p><strong>Condición:</strong> <span id="patientCondition"></span></p>
+                    
+                </div>
+            </div>
+            <div class="divider">
+                <h2>Historial Médico</h2>
+
+
+
+
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    
+
+    
+       
+ 
+
+
+    <script>
+        function buscarPaciente() {
+            var rut = document.getElementById("rut").value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "buscar_paciente_index.php?rut=" + rut, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    if (data.success) {
+                        document.getElementById("profile-card").style.display = "block";
+                        document.getElementById("patientName").textContent = data.nombre;
+                        document.getElementById("patientGender").textContent = data.genero;
+                        document.getElementById("patientAge").textContent = data.edad;
+                        document.getElementById("patientBirthDate").textContent = data.fecha_nacimiento;
+                        document.getElementById("patientNationality").textContent = data.nacionalidad;
+                        document.getElementById("patientAddress").textContent = data.direccion;
+                        document.getElementById("patientPhone").textContent = data.telefono;
+                        document.getElementById("patientEmail").textContent = data.correo;
+                        document.getElementById("patientBloodType").textContent = data.sangre;
+                        document.getElementById("patientRut").textContent = data.rut;
+                        document.getElementById("patientLastVisit").textContent = data.ultima_visita;
+                        document.getElementById("patientCondition").textContent = data.condicion;
+                    } else {
+                        alert('Paciente no encontrado');
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
