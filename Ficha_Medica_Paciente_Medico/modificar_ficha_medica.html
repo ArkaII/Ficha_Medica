@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Ficha Médica</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener un archivo CSS para estilos -->
+    <link rel="stylesheet" href="styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function cargarDatosPaciente(rut) {
             if (rut) {
                 $.ajax({
-                    url: 'buscar_paciente.php', // Archivo PHP que busca el paciente
+                    url: 'buscar_paciente.php',
                     method: 'GET',
                     data: { rut: rut },
                     dataType: 'json',
@@ -37,6 +37,19 @@
                 });
             }
         }
+
+        function actualizarUltimaVisita() {
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0]; // Formato YYYY-MM-DD
+            document.getElementById('ultima_visita').value = formattedDate;
+        }
+
+        $(document).ready(function() {
+            // Agregar evento de cambio a los campos que deseas que actualicen la última visita
+            $('input, select').on('change', function() {
+                actualizarUltimaVisita();
+            });
+        });
     </script>
     <style>
         /* Estilos del formulario */
@@ -93,56 +106,55 @@
     <h1>Modificar Ficha Médica</h1>
     <form action="guardar_modificacion.php" method="POST">
         <label for="rut">RUT:</label>
-        <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX.XXX.XXX-X" onblur="cargarDatosPaciente(this.value)">
+        <input type="text" id="rut" name="rut" required pattern="\d{1,2}\.\d{3}\.\d{3}-[\dkK]" title="Formato: XX - **Formato: XX.XXX.XXX-K**" onchange="cargarDatosPaciente(this.value)">
 
-        <div class="section">
-            <h2>Datos Personales</h2>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
 
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad" required>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
 
-            <label for="genero">Género:</label>
-            <select id="genero" name="genero" required>
- <option value="Masculino">Masculino</option>
-                <option value="Femenino">Femenino</option>
-                <option value="Otro">Otro</option>
-            </select>
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
 
-            <label for="nacionalidad">Nacionalidad:</label>
-            <input type="text" id="nacionalidad" name="nacionalidad" required>
-        </div>
+        <label for="nacionalidad">Nacionalidad:</label>
+        <input type="text" id="nacionalidad" name="nacionalidad" required>
 
-        <div class="section">
-            <h2>Contacto</h2>
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
 
-            <label for="telefono_contacto">Teléfono de Contacto:</label>
-            <input type="text" id="telefono_contacto" name="telefono_contacto" required pattern="\d{9}" title="Debe ingresar un número de teléfono de 9 dígitos">
+        <label for="telefono_contacto">Teléfono de Contacto:</label>
+        <input type="tel" id="telefono_contacto" name="telefono_contacto" required>
 
-            <label for="correo_electronico">Correo Electrónico:</label>
-            <input type="email" id="correo_electronico" name="correo_electronico" required>
-        </div>
+        <label for="correo_electronico">Correo Electrónico:</label>
+        <input type="email" id="correo_electronico" name="correo_electronico" required>
 
-        <div class="section">
-            <h2>Información Médica</h2>
-            <label for="tipo_sangre">Tipo de Sangre:</label>
-            <input type="text" id="tipo_sangre" name="tipo_sangre" required>
+        <label for="tipo_sangre">Tipo de Sangre:</label>
+        <select id="tipo_sangre" name="tipo_sangre" required>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
 
-            <label for="condicion">Condición Médica:</label>
-            <input type="text" id="condicion" name="condicion" required>
+        <label for="condicion">Condición Médica:</label>
+        <input type="text" id="condicion" name="condicion">
 
-            <label for="ultima_visita">Última Visita:</label>
-            <input type="date" id="ultima_visita" name="ultima_visita" required>
-        </div>
+        <label for="ultima_visita">Última Visita:</label>
+        <input type="date" id="ultima_visita" name="ultima_visita" readonly>
 
         <button type="submit">Guardar Cambios</button>
-        <button type="button" onclick="window.history.back() ;">Cancelar</button>
     </form>
 </body>
 </html>

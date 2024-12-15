@@ -14,7 +14,7 @@ try {
         }
 
         // Preparar la consulta SQL para verificar las credenciales del usuario
-        $query = "SELECT id, nombre, contrasena, rol FROM usuarios WHERE correo = :correo";
+        $query = "SELECT id, nombre, contrasena, rol, rut FROM usuarios WHERE correo = :correo";
         $stmt = $conn->prepare($query);
         $stmt->bindParam(':correo', $correo, PDO::PARAM_STR);
         $stmt->execute();
@@ -32,6 +32,8 @@ try {
                     $_SESSION["loggedin"] = true;
                     $_SESSION["usuario_id"] = $usuario["id"];
                     $_SESSION["nombre"] = $usuario["nombre"];
+                    $_SESSION["rut"] = $usuario["rut"]; // Almacena el RUT del paciente
+
                     header("Location: ../Ficha_Medica_Paciente_Medico/Index_Ficha_Paciente.html");
                     exit;
                 } else {
@@ -53,7 +55,7 @@ try {
                 </script>";
             }
         } else {
-            // // No se encontró un usuario con ese correo electrónico, mostrar mensaje y redirigir
+            // No se encontró un usuario con ese correo electrónico, mostrar mensaje y redirigir
             echo "<script>
                 alert('No se encontró un usuario con ese correo electrónico.');
                 setTimeout(function() {
